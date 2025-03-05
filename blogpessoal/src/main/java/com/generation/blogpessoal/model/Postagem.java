@@ -17,7 +17,7 @@ public class Postagem {
     private String titulo;  
     private String texto;  
 
-    // Get e Set (não apague!)  
+    // Get e Set
     public Long getId() { return id; }  
     public void setId(Long id) { this.id = id; }  
 
