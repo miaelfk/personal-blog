@@ -1,9 +1,12 @@
 package com.generation.blogpessoal.model;  
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;  
 import jakarta.persistence.GeneratedValue;  
 import jakarta.persistence.GenerationType;  
-import jakarta.persistence.Id;  
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;  
 
 @Entity  
@@ -26,4 +29,17 @@ public class Postagem {
 
     public String getTexto() { return texto; }  
     public void setTexto(String texto) { this.texto = texto; }  
+   
+    @ManyToOne
+    @JsonIgnoreProperties("postagens")
+    private Tema tema;
+
+    // Getter e Setter
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
+    }
 }  
